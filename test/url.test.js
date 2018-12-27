@@ -2,12 +2,18 @@ const tap = require('tap')
 const {
   coerce,
   color,
+  formatPath,
+  formatQuery,
   parse
 } = require('../lib/url')
 
 tap.test('lib/url.coerce() should prepend a protocol', async assert => {
   assert.equal(coerce('buzuli.com').href, 'http://buzuli.com/')
   assert.equal(coerce('buzuli.com').protocol, 'http:')
+})
+
+tap.test('lib/url.color() colorizes a full URL', async assert => {
+  assert.equal(color('http://buzuli.com'), 'http://buzuli.com/')
 })
 
 tap.test('lib/url.parse() should parse a valid URL', async assert => {
@@ -31,5 +37,13 @@ tap.test('lib/url.parse() should parse a valid URL', async assert => {
   assert.equal(parse('http://buzuli.com?a=b').query, 'a=b')
   assert.equal(parse('http://buzuli.com?a=b').search, '?a=b')
 
-  assert.equal(parse('http://buzuli.com#anchor').hash, 'anchor')
+  assert.equal(parse('http://buzuli.com#anchor').hash, '#anchor')
+})
+
+tap.test('lib/url.formatPath() colorizes path components', async assert => {
+  assert.equal(formatPath('/path/to'), '/path/to')
+})
+
+tap.test('lib/url.formatQuery() colorizes query components', async assert => {
+  assert.equal(formatQuery('a=1&b=2'), '?a=1&b=2')
 })

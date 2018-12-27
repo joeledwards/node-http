@@ -4,6 +4,8 @@
   "description": "HTTP utils for parsing and formatting",
   "main": "lib/index.js",
   "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
     "test": "tap test/*.test.js"
   },
   "repository": {
