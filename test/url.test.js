@@ -8,8 +8,15 @@ const {
 } = require('../lib/url')
 
 tap.test('lib/url.coerce() should prepend a protocol', async assert => {
+  assert.equal(coerce('g.co').href, 'http://g.co/')
   assert.equal(coerce('buzuli.com').href, 'http://buzuli.com/')
+  assert.equal(coerce('httpbin.org').href, 'http://httpbin.org/')
+  assert.equal(coerce('http://httpbin.org').href, 'http://httpbin.org/')
+  assert.equal(coerce('https://httpbin.org').href, 'https://httpbin.org/')
+
   assert.equal(coerce('buzuli.com').protocol, 'http:')
+  assert.equal(coerce('http://httpbin.org').protocol, 'http:')
+  assert.equal(coerce('https://httpbin.org').protocol, 'https:')
 })
 
 tap.test('lib/url.color() colorizes a full URL', async assert => {
