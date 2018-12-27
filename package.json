@@ -1,0 +1,35 @@
+{
+  "name": "@buzuli/http",
+  "version": "1.0.0",
+  "description": "HTTP utils for parsing and formatting",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "tap test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeledwards/node-http.git"
+  },
+  "keywords": [
+    "http",
+    "format",
+    "url",
+    "status",
+    "color",
+    "json",
+    "method"
+  ],
+  "author": "Joel Edwards <joeledwards@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeledwards/node-http/issues"
+  },
+  "homepage": "https://github.com/joeledwards/node-http#readme",
+  "dependencies": {
+    "@buzuli/color": "^2.1.0"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1",
+    "tap": "^12.1.1"
+  }
+}
