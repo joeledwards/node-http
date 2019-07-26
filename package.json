@@ -1,6 +1,6 @@
 {
   "name": "@buzuli/http",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HTTP utils for parsing and formatting",
   "main": "lib/index.js",
   "scripts": {
