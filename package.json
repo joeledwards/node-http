@@ -28,10 +28,11 @@
   },
   "homepage": "https://github.com/joeledwards/node-http#readme",
   "dependencies": {
-    "@buzuli/color": "^2.1.2"
+    "@buzuli/color": "^2.2.2",
+    "@buzuli/url": "^1.0.1"
   },
   "devDependencies": {
-    "standard": "^13.1.0",
-    "tap": "^14.4.3"
+    "standard": "^14.3.4",
+    "tap": "^14.10.7"
   }
 }

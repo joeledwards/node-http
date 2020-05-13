@@ -1,4 +1,5 @@
 const tap = require('tap')
+const c = require('@buzuli/color')
 const {
   coerce,
   color,
@@ -17,10 +18,6 @@ tap.test('lib/url.coerce() should prepend a protocol', async assert => {
   assert.equal(coerce('buzuli.com').protocol, 'http:')
   assert.equal(coerce('http://httpbin.org').protocol, 'http:')
   assert.equal(coerce('https://httpbin.org').protocol, 'https:')
-})
-
-tap.test('lib/url.color() colorizes a full URL', async assert => {
-  assert.equal(color('http://buzuli.com'), 'http://buzuli.com/')
 })
 
 tap.test('lib/url.parse() should parse a valid URL', async assert => {
@@ -47,10 +44,15 @@ tap.test('lib/url.parse() should parse a valid URL', async assert => {
   assert.equal(parse('http://buzuli.com#anchor').hash, '#anchor')
 })
 
+tap.test('lib/url.color() colorizes a full URL', async assert => {
+  assert.equal(color('http://buzuli.com'), `http://${c.blue('buzuli.com')}/`)
+})
+
 tap.test('lib/url.formatPath() colorizes path components', async assert => {
-  assert.equal(formatPath('/path/to'), '/path/to')
+  assert.equal(formatPath('/path/to'), `/${c.purple('path')}/${c.purple('to')}`)
 })
 
 tap.test('lib/url.formatQuery() colorizes query components', async assert => {
-  assert.equal(formatQuery('a=1&b=2'), '?a=1&b=2')
+  assert.equal(formatQuery('a=1&b=2'), c.grey(`?${c.yellow('a')}=${c.green('1')}&${c.yellow('b')}=${c.green('2')}`))
+  assert.equal(formatQuery(''), '')
 })
