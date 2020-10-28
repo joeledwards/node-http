@@ -32,7 +32,7 @@
     "@buzuli/url": "^1.0.1"
   },
   "devDependencies": {
-    "standard": "^14.3.4",
-    "tap": "^14.10.7"
+    "standard": "^15.0.1",
+    "tap": "^14.10.8"
   }
 }

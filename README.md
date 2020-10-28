@@ -6,11 +6,16 @@ Utils for parsing and formatting HTTP data.
 
 ```javascript
 const {
+  codeInfo,
   codes,
   codesSource,
   color
 } = require('@buzuli/http').status
 ```
+
+## status.codeInfo(code)
+
+Code info record based on the supplied status code if found, else `undefined`.
 
 ## status.codes()
 
